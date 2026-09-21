@@ -22,6 +22,7 @@ def main() -> None:
         virtual_name = os.path.basename(sys.prefix)
         package_path = site.getsitepackages()[0]
 
+        print()
         print("MATRIX STATUS: Welcome to the construct\n")
         print(f"Current Python: {sys.executable}")
         print(f"Virtual Environment: {virtual_name}")
