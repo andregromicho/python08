@@ -30,7 +30,7 @@ def check_all_dependencies() -> bool:
     return all_ok
 
 
-def run_analysis () -> None:
+def run_analysis() -> None:
 
     import pandas as pd
     import numpy as np
@@ -39,4 +39,33 @@ def run_analysis () -> None:
     np.random.seed(42)
     signal = np.random.randn(1000)
 
-    
+    df = pd.DataFrame(signal)
+
+    plt.figure(figsize=(10, 5))
+    plt.plot(df, color="green")
+    plt.title("Matrix Data Stream")
+    plt.savefig("matrix_analysis.png")
+    plt.close()
+
+    print("Analysis complete!")
+    print("Results saved to: matrix_analysis.png")
+
+
+def main() -> None:
+    print("\nLOADING STATUS: Loading programs...\n")
+
+    if check_all_dependencies():
+        print("Analyzing Matrix data...")
+        print("Processing 1000 data points...")
+        print("Generating visualization...")
+        run_analysis()
+    else:
+        print("\n[ERROR] Missing required dependencies!")
+        print("To install using pip:")
+        print("pip install -r requirements.txt")
+        print("To install using Poetry:")
+        print("poetry install")
+
+
+if __name__ == "__main__":
+    main()
