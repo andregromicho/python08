@@ -32,9 +32,9 @@ def check_all_dependencies() -> bool:
 
 def run_analysis() -> None:
 
-    import pandas as pd  # type: ignore
-    import numpy as np  # type: ignore
-    import matplotlib.pyplot as plt  # type: ignore
+    import pandas as pd
+    import numpy as np
+    import matplotlib.pyplot as plt
 
     np.random.seed(42)
     signal = np.random.randn(1000)
